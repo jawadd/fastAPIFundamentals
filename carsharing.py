@@ -6,9 +6,9 @@ app = FastAPI()
 
 
 @app.get("/")
-def welcome():
+def welcome(name):
     """Return a friendly welcome message."""
-    return {'message': "Welcome to the Car Sharing service!"}
+    return {'message': f"Welcome, {name}, the Car Sharing service!"}
 
 
 @app.get("/date")
