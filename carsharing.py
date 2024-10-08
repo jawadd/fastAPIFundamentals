@@ -25,6 +25,11 @@ def get_cars(size: str|None = None, doors: int|None=None) ->list:
     if doors:
         result= [car for car in db if car['doors'] == doors]
     return result
+@app.get("/api/cars/{id}")
+def get_car(id: int|None = None) ->dict:
+    if id:
+        result= [car for car in db if car['id'] == id]
+    return result[0]
 
 # @app.get("/")
 # def welcome(name):
